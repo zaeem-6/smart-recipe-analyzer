@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Turn the ingredients you have into practical recipe ideas.">
+  <title>Smart Recipe Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Kitchen intelligence</p>
+      <h1 id="page-title">Smart Recipe <span>Analyzer</span></h1>
+      <p class="intro">Tell us what is in your kitchen. We will turn it into a few good places to start.</p>
+    </section>
+
+    <section class="analyzer-panel" aria-labelledby="analyzer-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Start with what you have</p>
+          <h2 id="analyzer-title">What is in your kitchen?</h2>
+        </div>
+        <span class="step-mark">01 / 01</span>
+      </div>
+      <form id="recipe-form" novalidate>
+        <label for="ingredients">Ingredients</label>
+        <textarea id="ingredients" name="ingredients" rows="4" placeholder="e.g. chicken, garlic, rice, soy sauce" required></textarea>
+        <div class="form-footer">
+          <p class="helper-text">Separate ingredients with commas for the clearest suggestions.</p>
+          <button id="generate-button" type="submit">
+            <span>Generate recipes</span>
+            <span class="button-arrow" aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-title" aria-live="polite">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">Your next meal</p>
+          <h2 id="results-title">Recipe suggestions</h2>
+        </div>
+        <span id="result-count" class="result-count"></span>
+      </div>
+      <div id="results" class="results" role="region" aria-label="Recipe results">
+        <div class="empty-state">
+          <span class="empty-icon" aria-hidden="true">+</span>
+          <p>Your suggestions will appear here.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
